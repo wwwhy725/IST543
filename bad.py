@@ -4,7 +4,7 @@ shellcode = b''
 
 content = bytearray(b'a'*24)
 
-content += b"bbbb"
+# content += b"bbbb"
 
 echo_address = 0x000011bd
 
